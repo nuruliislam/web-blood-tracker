@@ -11,6 +11,6 @@ public class TestController {
 	@RequestMapping("/test")
 	public String listRequest(Model model)
 	{
-		return "list-request";
+		return "index";
 	}
 }
