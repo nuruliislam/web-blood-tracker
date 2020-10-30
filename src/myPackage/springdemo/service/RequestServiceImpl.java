@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import myPackage.springdemo.dao.RequestDAO;
 import myPackage.springdemo.entity.BloodRequest;
 
@@ -22,4 +21,9 @@ public class RequestServiceImpl implements RequestService
 		return requestDAO.getRequests();
 	}
 
+	@Override
+	@Transactional
+	public void saveRequest(BloodRequest bloodRequest) {
+		requestDAO.saveRequest(bloodRequest);
+	}
 }

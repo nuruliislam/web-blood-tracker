@@ -94,46 +94,35 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="saveCustomer" modelAttribute="customer" method="post">
+                            <form action="saveRequest" modelAttribute="customer" method="post">
                                
 
                                 <div class="form-group">
                                     <label for="Emp_name" class="col-form-label">Patient Name:</label>
-                                    <input type="text" class="form-control" id="p_name" name="p_name" required="required">
+                                    <input type="text" class="form-control" id="p_name" name="patientName" required="required">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Emp_email" class="col-form-label">Hospital</label>
-                                    <input type="text" class="form-control" id="h_name" name="h_name" required="required">
+                                    <input type="text" class="form-control" id="h_name" name="hospitalName" required="required">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Emp_pass" class="col-form-label">Address</label>
-                                    <input type="text" class="form-control" id="p_adress" name="p_address" required="required">
+                                    <input type="text" class="form-control" id="p_adress" name="patientAdress" required="required">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="Emp_pass" class="col-form-label">Contact</label>
-                                    <input type="text" class="form-control" id="p_contact" name="p_contac" required="required">
+                                    <input type="text" class="form-control" id="p_contact" name="contactNum" required="required">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="Emp_pass" class="col-form-label">Reference</label>
-                                    <input type="text" class="form-control" id="p_reference" name="p_reference" required="required">
+                                    <input type="text" class="form-control" id="p_reference" name="refernce" required="required">
                                 </div>
 
-                               
-                                <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Designation Status:</label>
-                                      <select name="user_type" class="form-control">
-                                        <option value="Admin">Admin</option>
-                                        <option value="Developer">Developer</option>
-                                        <option value="Manager">Manager</option>
-                                      </select>
-                                </div>
-                            
-                        
-                                <div class="modal-footer">
+                      			<div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>

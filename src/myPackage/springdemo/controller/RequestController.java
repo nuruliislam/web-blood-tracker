@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import myPackage.springdemo.dao.RequestDAO;
 import myPackage.springdemo.entity.BloodRequest;
 import myPackage.springdemo.service.RequestService;
 
@@ -30,6 +29,16 @@ public class RequestController {
 		theModel.addAttribute("requests", theRequests);
 		
 		return "request_view";
+	}
+	
+	@PostMapping("/saveRequest")
+	public String saveCustomer(@ModelAttribute("request") BloodRequest bloodRequest) {
+		
+		// save the customer using our service
+		requestService.saveRequest(bloodRequest);
+		System.out.println(bloodRequest.getHospitalName());
+		
+		return "redirect:/request/list";
 	}
 	
 	

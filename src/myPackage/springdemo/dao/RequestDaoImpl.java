@@ -8,7 +8,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
 import myPackage.springdemo.entity.BloodRequest;
 
 @Repository
@@ -33,6 +32,16 @@ public class RequestDaoImpl implements RequestDAO {
 						
 		// return the results		
 		return requests;
+	}
+
+	@Override
+	public void saveRequest(BloodRequest bloodRequest) {
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+				
+		// save/upate the request
+		currentSession.saveOrUpdate(bloodRequest);
+		
 	}
 
 }
