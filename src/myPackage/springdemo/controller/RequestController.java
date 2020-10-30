@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import myPackage.springdemo.entity.BloodRequest;
 import myPackage.springdemo.service.RequestService;
 
@@ -37,6 +39,15 @@ public class RequestController {
 		// save the customer using our service
 		requestService.saveRequest(bloodRequest);
 		System.out.println(bloodRequest.getHospitalName());
+		
+		return "redirect:/request/list";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteReq(@RequestParam("requestId") int id) {
+		
+		// delete the customer
+		requestService.deleteRequest(id);
 		
 		return "redirect:/request/list";
 	}
