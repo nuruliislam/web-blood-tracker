@@ -26,4 +26,11 @@ public class RequestServiceImpl implements RequestService
 	public void saveRequest(BloodRequest bloodRequest) {
 		requestDAO.saveRequest(bloodRequest);
 	}
+
+	@Override
+	@Transactional
+	public void deleteRequest(int id) {
+		requestDAO.deleteRequest(id);
+		
+	}
 }

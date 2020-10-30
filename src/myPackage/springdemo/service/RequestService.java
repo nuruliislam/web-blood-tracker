@@ -8,4 +8,6 @@ public interface RequestService
 	public List<BloodRequest> getRequests();
 	
 	public void saveRequest(BloodRequest bloodRequest);
+	
+	public void deleteRequest(int id);
 }
