@@ -43,5 +43,19 @@ public class RequestDaoImpl implements RequestDAO {
 		currentSession.saveOrUpdate(bloodRequest);
 		
 	}
+	
+	@Override
+	public void deleteRequest(int id) {
+
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// delete object with primary key
+		Query theQuery = 
+				currentSession.createQuery("delete from BloodRequest where id=:requestId");
+		theQuery.setParameter("requestId", id);
+		
+		theQuery.executeUpdate();		
+	}
 
 }
