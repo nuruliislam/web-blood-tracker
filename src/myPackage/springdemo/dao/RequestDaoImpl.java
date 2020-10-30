@@ -29,10 +29,10 @@ public class RequestDaoImpl implements RequestDAO {
 				BloodRequest.class);
 				
 		// execute query and get result list
-		List<BloodRequest> customers = theQuery.getResultList();
+		List<BloodRequest> requests = theQuery.getResultList();
 						
 		// return the results		
-		return customers;
+		return requests;
 	}
 
 }
