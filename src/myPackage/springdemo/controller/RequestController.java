@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import myPackage.springdemo.entity.BloodRequest;
 import myPackage.springdemo.service.RequestService;
 
@@ -34,7 +37,7 @@ public class RequestController {
 	}
 	
 	@PostMapping("/saveRequest")
-	public String saveCustomer(@ModelAttribute("request") BloodRequest bloodRequest) {
+	public String saveCustomer(@ModelAttribute("requests") BloodRequest bloodRequest) {
 		
 		// save the customer using our service
 		requestService.saveRequest(bloodRequest);
@@ -51,6 +54,4 @@ public class RequestController {
 		
 		return "redirect:/request/list";
 	}
-	
-	
 }
