@@ -33,4 +33,10 @@ public class RequestServiceImpl implements RequestService
 		requestDAO.deleteRequest(id);
 		
 	}
+
+	@Override
+	@Transactional
+	public BloodRequest getRequest(int id) {
+		return requestDAO.getRequest(id);
+	}
 }
