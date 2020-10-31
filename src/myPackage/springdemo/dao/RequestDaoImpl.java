@@ -24,7 +24,7 @@ public class RequestDaoImpl implements RequestDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 						
 		// create a query  ... sort by last name
-		Query<BloodRequest> theQuery = currentSession.createQuery("from BloodRequest order by patientName",
+		Query<BloodRequest> theQuery = currentSession.createQuery("from BloodRequest order",
 				BloodRequest.class);
 				
 		// execute query and get result list
@@ -56,6 +56,17 @@ public class RequestDaoImpl implements RequestDAO {
 		theQuery.setParameter("requestId", id);
 		
 		theQuery.executeUpdate();		
+	}
+
+	@Override
+	public BloodRequest getRequest(int id) {
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+				
+		// now retrieve/read from database using the primary key
+		BloodRequest bloodRequest = currentSession.get(BloodRequest.class, id);
+				
+		return bloodRequest;
 	}
 
 }
