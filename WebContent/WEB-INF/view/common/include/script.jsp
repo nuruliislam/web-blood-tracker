@@ -3,9 +3,30 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+		$('table .edit').on('click',function(){
+			var id=$(this).parent().find('#id').val();
+			console.log(String(id));
+			$.ajax({
+				type: 'GET',
+				url: '${updateLink}',
+				data:{'requestId': id},
+				success: function(request)
+				{
+					console.log("Success");
+				},
+				error: function (jXHR, textStatus, errorThrown) {
+					console.log(errorThrown);
+				}
+				});
+		});
+	});
+</script>
 <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="${pageContext.request.contextPath}/WebContent/resources/plugins/chart.js/Chart.min.js"></script>
-<script src="${pageContext.request.contextPath}/WebContent/resources/plugins/sparklines/sparkline.js"></script>
+<script src="${pageContext.request.contextPath}/resources/plugins/chart.js/Chart.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/plugins/sparklines/sparkline.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/jqvmap/jquery.vmap.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/jquery-knob/jquery.knob.min.js"></script>
