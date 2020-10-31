@@ -10,4 +10,6 @@ public interface RequestService
 	public void saveRequest(BloodRequest bloodRequest);
 	
 	public void deleteRequest(int id);
+	
+	public BloodRequest getRequest(int id);
 }
